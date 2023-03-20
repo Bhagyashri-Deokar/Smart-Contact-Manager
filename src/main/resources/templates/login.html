@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	th:replace="base::layout(~{::section})">
+<head>
+<meta charset="ISO-8859-1">
+<title>Login - Smart Contact Manager</title>
+</head>
+<body>
+
+	<section>
+		<div class="login-form-bg mt-3 mb-5">
+			<div class="row">
+
+				<div class="col-md-6 mx-auto">
+					<div class="card">
+						<div class="login-box">
+							<div class="container text-center">
+								<img style="width: 80px" th:src="@{img/add-friend.png}">
+
+							</div>
+						</div>
+						<div class="login-snip">
+							<h2 class="text-center">log in</h2>
+
+							<div class="login-space">
+
+								<form action="#" th:action="@{/dologin}" method="post">
+
+									<div class="group">
+										<label for="user" class="label">Username</label> <input
+											class="form-control" id="user" type="text" name="username"
+											placeholder="Enter your username">
+									</div>
+
+									<div class="group">
+										<label for="pass" class="label">Password</label> <input
+											class="form-control" id="pass" type="password"
+											name="password" data-type="password"
+											placeholder="Enter your password">
+									</div>
+
+									<div class="group">
+										<input id="check" type="checkbox" class="check"> <label
+											for="check"><span class="icon"></span> Keep me Signed
+											in</label>
+									</div>
+
+									<div class="group">
+										<input type="submit" class="button" value="Sign In">
+									</div>
+
+									<div th:if="${param.error}" class="alert alert-danger">
+										Invalid Username and password</div>
+									<div th:if="${param.logout}" class="alert alert-success">
+										You have been logged out</div>
+
+									<div class="foot">
+										<a th:href="@{/forgetPassword}">Forgot Password?</a>
+										<a th:href="@{/signup}">Register</a>
+									</div>
+
+
+								</form>
+
+							</div>
+
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</div>
+		</div>
+	</section>
+</body>
+</html>

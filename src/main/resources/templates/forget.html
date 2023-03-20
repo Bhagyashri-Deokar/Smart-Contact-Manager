@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	th:replace="base::layout(~{::section})">
+<head>
+<meta charset="ISO-8859-1">
+<title>Login - Smart Contact Manager</title>
+</head>
+<body>
+
+	<section>
+		<div class="login-form-bg mt-3 mb-5">
+			<div class="row">
+
+				<div class="col-md-6 mx-auto">
+					<div class="card">
+					
+						<div class="login-box">
+							<div class="container text-center">
+								<img style="width: 80px" th:src="@{img/add-friend.png}">
+
+							</div>
+						</div>
+						<div class="login-snip">
+							<i>Enter Your Email Id For Verification</i>
+
+							<div class="login-space">
+
+								<form action="#" th:action="@{/sendOtp}" method="post"
+									th:object="${user}">
+
+									<div class="group">
+										<label for="user" class="label">Enter Mail Id</label> <input
+											class="form-control" id="user" type="email" name="email"
+											th:value="${email}" placeholder="Enter your username">
+									</div>
+									<div class="group"
+										th:style="${status} ? 'display:none' : 'display:block' ">
+										<label for="user" class="label">Enter Your OTP</label> <input
+											class="form-control" id="otp" type="text" name="otp"
+											placeholder="Enter your OTP">
+									</div>
+									<div class="group"
+										th:style="${pwdstatus} ? 'display:none' : 'display:block' ">
+										<label for="user" class="label">Enter Your Password</label> <input
+											class="form-control" id="password" type="password" name="password"
+											placeholder="Enter your Password" th:value="${password}">
+									</div>
+
+									<div class="group mt-5 text-center">
+										<input type="submit" class="btn btn-outline-primary"
+											value="Sign In">
+									</div>
+
+									<!-- alert message if error/success -->
+
+						<div th:if="${session.message}"
+							th:classappend="${session.message.type}"
+							class="alert text-center">
+							<p th:text="${session.message.content}"></p>
+							<th:block th:text="${#session.removeAttribute('message')}">
+							</th:block>
+						</div>
+						
+								</form>
+
+							</div>
+
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</div>
+		</div>
+	</section>
+</body>
+</html>

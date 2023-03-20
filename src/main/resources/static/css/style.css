@@ -1,0 +1,370 @@
+body{
+	background: #e2e2e2 !important;	
+}
+
+.bg-primary{
+	background: rgb(0, 128, 255) !important;
+}
+
+.banner{
+	width:100%;
+	height: 93vh;
+	background : linear-gradient(rgba(0,0,0,.7), rgba(0,0,0,.2)), url("../img/banner6.jpg");
+	background-size: cover;
+	color: white;
+}
+
+.my-card{
+	background: #ffffff;
+	padding :8px;
+	border-radius: 10px;
+}
+
+/* .login-form-bg{
+	 margin: 0;
+    color: #6a6f8c;
+    background: #c8c8c8;
+    font: 600 16px/18px 'Open Sans', sans-serif
+	
+} */
+
+/*Login form*/
+.login-box {
+    width: 100%;
+    margin: auto;
+    max-width: 600px;
+    min-height: 500px;
+    position: relative;
+    /* background: url(https://images.rawpixel.com/image_800/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvcm00MjgtMDAzMC1rczA0dXNjcy5qcGc.jpg) no-repeat center;
+     box-shadow: 0 12px 15px 0 rgba(0, 0, 0, .24), 0 17px 50px 0 rgba(0, 0, 0, .19)
+*/}
+
+.login-snip {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    padding: 90px 70px 50px 70px;
+ /*    background: rgba(0, 77, 77, .9) */
+}
+
+.login-snip .login,
+.login-snip .sign-up-form {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    position: absolute;
+    transform: rotateY(180deg);
+    backface-visibility: hidden;
+    transition: all .4s linear
+}
+
+.login-snip .sign-in,
+.login-snip .sign-up,
+.login-space .group .check {
+    display: none
+}
+
+.login-snip .tab,
+.login-space .group .label,
+.login-space .group .button {
+    text-transform: uppercase
+}
+
+.login-snip .tab {
+    font-size: 22px;
+    margin-right: 15px;
+    padding-bottom: 5px;
+    margin: 0 15px 10px 0;
+    display: inline-block;
+    border-bottom: 2px solid transparent
+}
+
+.login-snip .sign-in:checked+.tab,
+.login-snip .sign-up:checked+.tab {
+    color: #fff;
+    border-color: #1161ee
+}
+
+.login-space {
+    min-height: 345px;
+    position: relative;
+    perspective: 1000px;
+    transform-style: preserve-3d
+}
+
+.login-space .group {
+    margin-bottom: 15px
+}
+
+.login-space .group .label,
+.login-space .group .input,
+.login-space .group .button {
+    width: 100%;
+    color: #fff;
+    display: block
+}
+
+.login-space .group .input,
+.login-space .group .button {
+    border: none;
+    padding: 15px 20px;
+    border-radius: 25px;
+    background: rgba(255, 255, 255, .1)
+}
+
+.login-space .group input[data-type="password"] {
+    text-security: circle;
+    -webkit-text-security: circle
+}
+
+.login-space .group .label {
+    color: #aaa;
+    font-size: 12px
+}
+
+.login-space .group .button {
+    background: #1161ee
+}
+
+.login-space .group label .icon {
+    width: 15px;
+    height: 15px;
+    border-radius: 2px;
+    position: relative;
+    display: inline-block;
+    background: rgba(255, 255, 255, .1)
+}
+
+.login-space .group label .icon:before,
+.login-space .group label .icon:after {
+    content: '';
+    width: 10px;
+    height: 2px;
+    background: #fff;
+    position: absolute;
+    transition: all .2s ease-in-out 0s
+}
+
+.login-space .group label .icon:before {
+    left: 3px;
+    width: 5px;
+    bottom: 6px;
+    transform: scale(0) rotate(0)
+}
+
+.login-space .group label .icon:after {
+    top: 6px;
+    right: 0;
+    transform: scale(0) rotate(0)
+}
+
+.login-space .group .check:checked+label {
+    color: #fff
+}
+
+.login-space .group .check:checked+label .icon {
+    background: #1161ee
+}
+
+.login-space .group .check:checked+label .icon:before {
+    transform: scale(1) rotate(45deg)
+}
+
+.login-space .group .check:checked+label .icon:after {
+    transform: scale(1) rotate(-45deg)
+}
+
+.login-snip .sign-in:checked+.tab+.sign-up+.tab+.login-space .login {
+    transform: rotate(0)
+}
+
+.login-snip .sign-up:checked+.tab+.login-space .sign-up-form {
+    transform: rotate(0)
+}
+
+*,
+:after,
+:before {
+    box-sizing: border-box
+}
+
+.clearfix:after,
+.clearfix:before {
+    content: '';
+    display: table
+}
+
+.clearfix:after {
+    clear: both;
+    display: block
+}
+
+a {
+    color: inherit;
+    text-decoration: none
+}
+
+.hr {
+    height: 2px;
+    margin: 60px 0 50px 0;
+    background: rgba(255, 255, 255, .2)
+}
+
+.foot {
+    text-align: center
+}
+
+/*
+.card {
+    width: 500px;
+    left: 100px
+}
+*/
+
+::placeholder {
+    color: #b3b3b3
+}
+/*end login form*/
+
+/* User dashboard sidebar style*/
+
+@media only screen and (max-width :600px) {
+		.sidebar{
+					display: none;
+					width: 80% !important;;
+					background : white;
+					height:100vh;
+					position: fixed;
+					padding-top: 20px;
+		}
+		
+		.content{
+					margin-left :0% !important;;
+		} 
+
+}
+
+.sidebar{
+	width: 18%;
+	background : white;
+	height:100%;
+	position: fixed;
+	padding-top: 45px;
+	z-index: 9999999999999999;
+}
+
+.sidebar a{
+	display  :block;
+	width:100%;
+	padding: 10px 25px;
+	text-decoration:none;	
+	color: gray;
+  
+}
+
+.sidebar a:hover{
+	background: #e2e2e2;
+	
+}
+
+.sidebar .divider {
+	height : .5px;
+	width:100%;
+	background: #e2e2e2;
+	margin-top: 10px;
+}
+
+.content{
+	width:80%;
+	height : 100%;
+	margin-left : 20%;
+
+}
+
+.sidebar .crossbtn{
+	position : absolute;
+	top :0;
+	right : 35px;
+	font-size: 36px;
+	cursor : pointer;
+}
+
+.show_contact_img{
+ width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  overflow: hidden;
+  background-color: blue;
+}
+
+/*user dashboard*/
+
+section{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background: url("../img/bg.webp");
+    background-size: cover;
+    background-attachment: fixed;
+}
+section .wave 
+{
+    position: absolute;
+    width: 100%;
+    height: 143px;
+    bottom: 0;
+    left: 0;
+    background: url("../image/wave.png");
+    animation: animate 10s linear infinite; 
+}
+section .wave::before
+{
+    content: '';
+    width: 100%;
+    height: 143px;
+    background: url(wave.png);
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0.4;
+    animation: animate-reverse 10s linear infinite; 
+}
+section .wave::after
+{
+    content: '';
+    width: 100%;
+    height: 143px;
+    background: url(wave.png);
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0.6;
+    animation-delay: -5s;
+    animation: animate 20s linear infinite; 
+}
+@keyframes animate 
+{
+    0%
+    {
+        background-position: 0;
+    }
+    100%
+    {
+        background-position: 1360px
+    }
+}
+@keyframes animate-reverse 
+{
+    0%
+    {
+        background-position: 1360px;
+    }
+    100%
+    {
+        background-position: 0;
+    }
+}
+
+
+/*user dashboard close*/

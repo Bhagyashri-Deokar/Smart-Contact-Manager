@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	th:replace="base::layout(~{::section})">
+<head>
+<meta charset="ISO-8859-1">
+<title>signup page</title>
+</head>
+<body>
+
+	<section>
+		<div class="container">
+			<div class="row">
+
+				<div class="col-md-6 offset-md-3">
+
+					<div class="my-card mt-3">
+
+						<!-- alert message if error/success -->
+
+						<div th:if="${session.message}"
+							th:classappend="${session.message.type}"
+							class="alert text-center">
+							<p th:text="${session.message.content}"></p>
+							<th:block th:text="${#session.removeAttribute('message')}">
+							</th:block>
+						</div>
+
+						<div class="container text-center">
+							<img style="width: 80px" th:src="@{img/add-friend.png}">
+
+						</div>
+
+						<h1 class="text-center">Register here !!</h1>
+
+						<form novalidate="novalidate" th:action="@{/do_register}"
+							method="post" th:object="${user}">
+
+							<!-- name field -->
+
+							<div class="form-group">
+								<label for="name-field" class="form-label">Your Name</label> <input
+									type="text" class="form-control"
+									th:classappend="${#fields.hasErrors('name')?'is-invalid': ' ' }"
+									id="name-field" name="name" th:value="${user.name}"
+									placeholder="Enter name" required />
+
+								<div th:each="e : ${#fields.errors('name')}" th:text="${e}"
+									class="invalid-feedback"></div>
+							</div>
+
+
+
+							<!-- email field -->
+							<div class="form-group">
+
+								<label for="email-field" class="form-label">Email</label> <input
+									type="email" class="form-control"
+									th:classappend="${#fields.hasErrors('email')?'is-invalid': ' ' }"
+									id="email-field" name="email" th:value="${user.email}"
+									placeholder="email here" required />
+								<div th:each="e : ${#fields.errors('email')}" th:text="${e}"
+									class="invalid-feedback"></div>
+
+							</div>
+
+							<!-- password field -->
+							<div class="form-group">
+
+								<label for="password-field" class="form-label">Password</label>
+								<input type="password" name="password" class="form-control"
+									th:classappend="${#fields.hasErrors('password')?'is-invalid': ' ' }"
+									id="password-field" placeholder="password here" required />
+
+								<div th:each="e : ${#fields.errors('password')}" th:text="${e}"
+									class="invalid-feedback"></div>
+
+							</div>
+
+							<!-- user about fields -->
+							<div class="form-group">
+								<textarea id="about-field" class="form-control"
+									th:classappend="${#fields.hasErrors('about')?'is-invalid': ' ' }"
+									name="about" th:text="${user.about}"
+									placeholder="Enter something about yourself" rows="5"></textarea>
+								<div th:each="e : ${#fields.errors('about')}" th:text="${e}"
+									class="invalid-feedback"></div>
+
+							</div>
+
+							<!-- terms and conditions agreement -->
+							<div class="form-group form-check text-center">
+								<input type="checkbox" class="form-check-input" name="agreement" />
+								<label for="agreement" class="">Accept terms and
+									condition</label>
+							</div>
+
+
+							<div class="container text-center">
+								<button type="submit" class="btn bg-primary text-white">
+									Submit</button>
+								<button type="reset" class="btn btn-warning text-center">
+									Reset</button>
+							</div>
+
+						</form>
+
+					</div>
+
+				</div>
+
+			</div>
+		</div>
+	</section>
+</body>
+</html>

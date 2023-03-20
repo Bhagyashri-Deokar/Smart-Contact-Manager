@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+	th:replace="user/user_base::layout(~{::section})">
+<head>
+<meta charset="UTF-8" />
+<title>Document</title>
+</head>
+<body>
+	<section>
+		<div class="card col-md-7 offset-md-3 mt-4">
+
+			<div class="container text-center mt-5">
+				<img style="width: 100px" th:src="@{/img/add-friend.png}">
+
+			</div>
+
+			<div class="card-body">
+				<div class="row">
+					<div class="col-sm-4">
+						<p class="mt-4">Add Your Contacts</p>
+					</div>
+					<div class="col-sm-8">
+						<a th:href="@{/user/add-contact-form}"
+							class="btn btn-primary mt-4 btn-block text-uppercase">Add New
+							Button</a>
+					</div>
+				</div>
+				<hr>
+				<div class="row">
+				<div class="col-lg-4">
+				<b>Donate For Us</b>
+				</div>
+				<div class="col-lg-8">
+					<form>
+					<div class="input-group">
+						<input type="text" class="form-control" id="payment"
+							placeholder="Enter Amount here" required> 
+							<button class="btn btn-success" id="pay" type="button"  onclick="paymentstart()">
+							Pay
+							</button>
+					</div>
+					</form>
+					<!-- /input-group -->
+				</div>
+				</div>
+				
+				<!-- /.col-lg-6 -->
+			</div>
+			<!-- /.row -->
+		</div>
+	</section>
+</body>
+</html>
